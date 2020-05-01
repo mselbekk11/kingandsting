@@ -1,0 +1,215 @@
+body {
+  background-color: #430c65;
+  background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.14'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.rightside {
+  grid-area: rightside;
+}
+
+.content {
+  grid-area: content;
+  position: relative;
+}
+
+.header {
+  grid-area: header;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 3fr 1000px 3fr;
+  grid-template-areas:
+    "header  header  header"
+    "sidebar content rightside"
+    "footer  footer  footer";
+  color: #444;
+}
+
+.box {
+  background-color: #f1f2f5;
+  color: #fff;
+  border-radius: 5px;
+  padding: 30px;
+  font-size: 150%;
+}
+
+.header,
+.footer {
+  /* background-color: #441772 ; */
+  /* background-color: none; */
+}
+
+.margins {
+  padding: 0px;
+  font-size: 150%;
+  min-height: 100px;
+}
+
+.box.content .wrapper {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 5fr 7fr;
+  grid-template-areas: "left-side  right-side";
+  color: #444;
+  font-size: 10px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.left-side {
+  grid-area: left-side;
+  background-color: red;
+}
+
+.right-side {
+  grid-area: right-side;
+  background-color: #fff;
+  padding: 10px;
+  /* position: relative; */
+  height: 513px;
+  overflow: hidden;
+}
+
+.right-side .scrollable {
+  height: 100%;
+  /* height: 513px; */
+  overflow: auto;
+  /* position: absolute; */
+  /* overflow: scroll; */
+  /* background-color: red !important; */
+}
+
+#second-grid {
+  display: grid;
+  /* grid-gap: 20px; */
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "uno"
+    "dos"
+    "tres"
+    "quatro"
+    "says";
+  color: #444;
+  font-size: 10px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: #e0e0e0;
+}
+
+.uno {
+  grid-area: uno;
+  padding: 30px 20px 20px 20px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.dos {
+  grid-area: dos;
+  padding: 10px 20px 10px 20px;
+}
+
+.tres {
+  grid-area: tres;
+  padding: 20px 20px 10px 20px;
+  border-top: solid 2px rgb(195, 195, 195);
+}
+
+.quatro {
+  grid-area: quatro;
+  padding: 20px 20px 0px 20px;
+  border-top: solid 2px rgb(195, 195, 195);
+}
+
+.says {
+  grid-area: says;
+  padding: 20px 20px 20px 20px;
+  text-align: center;
+}
+
+input {
+  width: 90%;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: slategray;
+}
+
+button {
+  padding: 10px 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  border: 2px solid #cfcfcf;
+  color: #909090;
+  cursor: pointer;
+  min-width: 80px;
+}
+
+button:hover {
+  background-color: #50246f;
+  -webkit-transition: 0.3s;
+  color: #fff;
+  border: 2px solid #50246f;
+}
+
+button.submit {
+  padding: 10px 30px;
+  background-color: #24b373;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.active {
+  color: #fff !important;
+  background-color: #50246f !important;
+  border: 2px solid #50246f !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: none !important;
+}
+/* 
+    table {
+        max-height: 513.33px!important;
+        overflow: hidden;
+    } */
+
+table td {
+  padding: 10px 10px;
+}
+
+table a {
+  text-transform: lowercase;
+}

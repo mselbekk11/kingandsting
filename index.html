@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Creator URL</title>
+
+    <meta
+      name="description"
+      content="Zmags is a content creation tool used to create and publish experiences to your website"
+    />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0"
+    />
+
+    <!-- CSS  -->
+    <link
+      href="css/style.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+
+    <link
+      rel="shortcut icon"
+      href="https://res.cloudinary.com/mselbekk-com/image/upload/v1584481174/z_aw9bmt.png"
+      type="image/x-icon"
+    />
+    <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800&display=swap" rel="stylesheet"> -->
+    <!-- CSS  -->
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- JS -->
+  </head>
+  <body>
+    <!-- JS: Handling of sending of data to sheets -->
+    <script>
+      var userData;
+      var vertical;
+      var ecomm;
+      var usecase;
+
+      $(document).ready(function () {
+        $.fn.serializeObject = function () {
+          var o = {};
+          var a = this.serializeArray();
+          $.each(a, function () {
+            if (o[this.name]) {
+              if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+              }
+              o[this.name].push(this.value || "");
+            } else {
+              o[this.name] = this.value || "";
+            }
+          });
+          return o;
+        };
+      });
+
+      function setVertical(option) {
+        vertical = option;
+      }
+
+      function setEcomm(option) {
+        ecomm = option;
+      }
+
+      function setUsecase(option) {
+        usecase = option;
+      }
+
+      function sendToSheets() {
+        var userInput = {
+          URL: document.getElementById("homepage").value,
+          Vertical: vertical,
+        };
+
+        var url =
+          "https://script.google.com/macros/s/AKfycbxZV1MZXa4TwWbJ1WNMi9QlhB5qMWtGi5p22vkXnJqfcXR3LqQ/exec";
+
+        var jqxhr = $.ajax({
+          url: url,
+          method: "GET",
+          dataType: "json",
+          data: userInput,
+          success: function (data) {
+            //nothing for now
+          },
+        });
+      }
+    </script>
+    <!-- end of JS -->
+    <div class="wrapper">
+      <div class="margins header"></div>
+      <div class="sidebar"></div>
+      <div class="box content">
+        <img src="/img/kands.png">
+        <button>Send some fuck shit to Nick</button>
+        <!-- <div class="the-crew">
+        <img class="space" src="/img/1-icon.png">
+        <img class="space" src="/img/2-icon.png">
+        <img class="space" src="/img/1-icon.png">
+        <img class="space" src="/img/1-icon.png">
+        <img class="space" src="/img/1-icon.png">
+        <img class="space" src="/img/1-icon.png">
+        </div> -->
+
+        </div>
+      </div>
+      <div class="rightside"></div>
+      <div class="margins footer"></div>
+
+
+
+
+
+    </div>
+
+    <script src="/index.js"></script>
+  </body>
+
+  <footer></footer>
+</html>
+
+<!-- 
+<button><a>Fashion</a></button>
+              <button>Automotive</button>
+              <button>Furniture</button>
+              <button>Non-Retail</button>
+              <button>Outdoor</button>
+              <button>B2B</button>
+              <button>Food &amp; Drink</button> -->
